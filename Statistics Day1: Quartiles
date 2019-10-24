@@ -1,0 +1,59 @@
+----Task 
+----Given an array, X, of  integers, N calculate the respective first quartile (Q1), second quartile (Q2), and third quartile (Q3). It is guaranteed that Q1, Q2, and Q3 are integers. 
+----
+----Input Format 
+----
+----The first line contains an integer, n, denoting the number of elements in the array. 
+----The second line contains  n space-separated integers describing the array's elements. 
+----
+---- 
+----
+----Output Format 
+----
+----Print 3 lines of output in the following order: 
+----
+----The first line should be the value of Q1. 
+----
+----The second line should be the value of Q2 . 
+----
+----The third line should be the value of Q3. 
+----
+----Sample Input 
+----
+----9 3 7 8 5 12 14 21 13 18  
+----
+----Sample Output 
+----
+----6  
+----12  
+----16 
+
+
+N=int(input()) 
+X=list(map(int,input().split())) 
+X.sort()
+ 
+ 
+def median_c(Lis,n): 
+   p=int(n/2)
+   p1=p-1  
+
+   if n%2==0:
+      return int((Lis[p]+Lis[p1])/2)  
+   else:  
+      return int(Lis[p]) 
+
+pos=int(N/2) 
+
+if N%2==0:  
+   L=X[0:pos] 
+   U=X[pos:N]  
+else: 
+   L=X[0:pos]  
+   U=X[pos+1:N] 
+
+print(median_c(L,int(N/2))) 
+print(median_c(X,int(N))) 
+print(median_c(U,int(N/2))) 
+
+ 
